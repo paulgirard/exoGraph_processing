@@ -19,12 +19,16 @@ public class Main extends PApplet {
 
     public void setup() {
         // TODO: setup application
-        size(400,400,OPENGL);
+        size(400,400);//,OPENGL);
 
-        ellipse(200,200,50,50);
+       
     }
 
     public void draw() {
         // TODO: handle each frame of drawing
+        background(120);
+         ellipse(200,200,50,50);
+         ellipse(150,150,20,20);
+         line(200,200,150,150);
     }
 }
