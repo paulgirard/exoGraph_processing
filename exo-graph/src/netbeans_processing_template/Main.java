@@ -20,8 +20,6 @@ public class Main extends PApplet {
     public void setup() {
         // TODO: setup application
         size(400,400,OPENGL);
-        // Enable 4x oversampling (if supported)
-        hint(ENABLE_OPENGL_4X_SMOOTH);
 
         ellipse(200,200,50,50);
     }
