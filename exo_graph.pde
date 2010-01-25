@@ -5,13 +5,12 @@
 //global vars
 int[][] circles = new int[2][6]; 
 
-//velocity
-int x_velocity=1;
-int y_velocity=2;
+
 
 void setup()
 {
   size(400,400);
+  frameRate(25);
  
   // x
   circles[0][0]=200;
