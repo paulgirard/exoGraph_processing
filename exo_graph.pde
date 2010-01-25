@@ -22,9 +22,9 @@ void setup()
   //height
   circles[0][3]=50;
   // x velocity
-   circles[0][4]=-2;
+  circles[0][4]=-2;
   // y velocity
-   circles[0][5]=2;
+  circles[0][5]=2;
   // x
   circles[1][0]=80;
   // y
