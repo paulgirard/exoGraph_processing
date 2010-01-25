@@ -1,5 +1,6 @@
 // draw two circles and a line between them
 // add colors : black background, turquoise circle with opacity, yellow line
+// move circles
 
 size(400,400);
 background(10);
