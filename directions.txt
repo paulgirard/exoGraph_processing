@@ -6,7 +6,9 @@
 
 // move circles
 
-// create a circle object 
+// create a circle object with position, sizes, velocities, a move and a draw methods
+
+// draw many objects
 
 // draw the lines only if circles are close
 
