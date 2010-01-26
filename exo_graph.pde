@@ -80,7 +80,7 @@ void draw()
   stroke(205,206,0);
   for(int i=0;i<circles.length;i++)
   {
-    for(int j=i+1;j<circles.length-1;j++)
+    for(int j=i+1;j<circles.length;j++)
     {
       if(circles[i].isClose(circles[j]))
       {
