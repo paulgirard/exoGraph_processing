@@ -1,4 +1,4 @@
-import processing.opengl.*;
+
 
 // draw two circles and a line between them
 // add colors : black background, turquoise circle with opacity, yellow line
@@ -86,7 +86,8 @@ class Circle
 
 void setup()
 {
-  size(400,400,OPENGL);
+  size(400,400);
+  smooth();
   frameRate(15);
   for(int i=0;i<nb_circles;i++)
   {
