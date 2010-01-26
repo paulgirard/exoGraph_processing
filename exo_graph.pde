@@ -5,10 +5,10 @@ import processing.opengl.*;
 // change circles color randomly
 // move circles
 // create a circle object with position, sizes, velocities, color a move and a draw methods
- 
+// make edges transportation : a circle which gets out of the canvas reappear one opposite border 
 
 //global vars
-int nb_circles=30;
+int nb_circles=10;
 int proche=80;
 int maxSizeCircle=50;
 int minSizeCircle=10;
@@ -48,9 +48,21 @@ class Circle
   
   void draw()
   {
+   
+     
     fill(this.r,this.g,this.b,this.al);
     noStroke();
     ellipse(this.x,this.y,this.s,this.s);
+    
+     float rayon=this.s/2;
+    if(this.x>width+rayon)
+     this.x=-rayon;
+    if(this.x<-rayon)
+     this.x=width+rayon;
+    if(this.y>height+rayon)
+     this.y=-rayon;
+    if(this.y<-rayon)
+     this.y=height+rayon;
   }
   
   boolean isClose(Circle c1)
@@ -80,7 +92,7 @@ void draw()
   stroke(205,206,0);
   for(int i=0;i<circles.length;i++)
   {
-    for(int j=i+1;j<circles.length-1;j++)
+    for(int j=i+1;j<circles.length;j++)
     {
       if(circles[i].isClose(circles[j]))
       {
