@@ -13,6 +13,8 @@ int proche=80;
 int maxSizeCircle=50;
 int minSizeCircle=10;
 float maxVelocity=1.5;
+int mouseProche=10;
+boolean mouseFlag=false;
 Circle[] circles = new Circle[nb_circles]; 
 
 class Circle
@@ -26,6 +28,7 @@ class Circle
   int g=200;
   int b=200;
   int al=50;
+  boolean dragged=false;
   
   public Circle(int x, int y , int s, float x_velocity, float y_velocity,int r, int g, int b, int al)
   {
@@ -44,13 +47,23 @@ class Circle
   {
     this.x+=this.x_velocity;
     this.y+=this.y_velocity;
+    if(mouseFlag&&dist(this.x,this.y,mouseX,mouseY)<this.s)
+    {
+      this.x=mouseX;
+      this.y=mouseY;
+      this.dragged=true;
+    }
+    else
+     this.dragged=false;
   }
   
   void draw()
   {
    
-     
-    fill(this.r,this.g,this.b,this.al);
+    if(!dragged)
+      fill(this.r,this.g,this.b,this.al);
+    else
+      fill(255-this.r,255-this.g,255-this.b,this.al);
     noStroke();
     ellipse(this.x,this.y,this.s,this.s);
     
@@ -102,6 +115,21 @@ void draw()
   }
   
 }
+
+void mousePressed()
+{
+  mouseFlag=true;
+}
+void mouseDragged()
+{
+  mouseFlag=true;
+}
+
+void mouseReleased()
+{
+  mouseFlag=false;
+}
+
 
 int randomInt(int min, int max)
 {
